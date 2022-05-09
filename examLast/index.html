@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Product</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-bars"></i>
+                            </li>
+                            <li>
+                                <div class="search">
+                                    <input type="text" placeholder="Search"> 
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </li>
+                        </ul>   
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li class="wishlist"><i class="fa-solid fa-heart"></i>
+                                <span class="wishlist-notif">0</span>
+                            </li>
+                            <li class="cart"><i class="fa-solid fa-cart-shopping"></i>
+                                <span class="cart-notif">0</span></li>
+                            <li><a href=""><img src="./assets/images/Profile.png" alt="Profile"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+            
+            <div class="popup-wishlist">
+                <div class="title">
+                    <i class="fa-solid fa-heart-circle-plus"></i>
+                    <h6>Product Added to Wishlist</h6>
+                    <i class="close-wishlist fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="wrapper">
+                    <div class="show-wishlist"></div> <!-- binding all data here-->
+                    <button class="view-wishlist" id="view-wishlist">View your Wishlist</button>            
+                </div>
+            </div>
+            
+            <div class="popup-cart">
+                <div class="title">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <h6>Product Added to your Cart</h6>
+                    <i class="close-cart fa-solid fa-circle-xmark"></i>
+                </div>
+                <div class="wrapper">
+                    <div class="show-cart"></div> <!-- binding all data here-->
+                    <button class="view-cart" id="view-cart">View your Cart</button>            
+                </div>
+            </div> 
+            
+        </div>
+    </header>
+
+    <section class="category">
+        <div class="container">
+            <div class="content-wrapper">
+                <ul>
+                    <li><a href="">Home</a></li> |
+                    <li><a href="">Snacks</a></li> |
+                    <li><a href="">Fries</a></li> | 
+                    <li><a href="" class="active">Curly Fries</a> </li>
+                </ul>
+
+                <div class="product">
+                    <div class="row">
+                        <div class="col">
+                            <img id=featured src="./assets/images/product-preview/Curly Fries.jpg" alt="Curly Fries">
+                            <div id="slide-wrapper" >
+                                <div id="slider">
+                                    <img class="thumbnail active" src="./assets/images/product-preview/thumb/Curly Fries_1.jpg" alt="Curly Fries">
+                                    <img class="thumbnail active" src="./assets/images/product-preview/thumb/Curly Fries_2.jpg" alt="Curly Fries">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <span class="cat-name">FRIES</span>
+                            <h4 class="product-name" id="product-name">CURLY FRIES</h4>
+                            <span class="promo">₱169.99</span><span class="discount"> (20% OFF)</span>
+                            <h4 class="price">₱<span id="real-price">135.99</span></h4>
+                
+                            <p>Additional tax may apply on checkout</p>
+
+                            <div class="select-size">
+                                <h5>Select Size</h5>
+                                <div class="sizes-list">
+                                    <input type="radio" id="regular" name="size" value="Regular">
+                                    <label for="regular">Regular</label>
+                                    <input type="radio" id="medium" name="size" value="Medium">
+                                    <label for="medium">Medium</label>
+                                    <input type="radio" id="large" name="size" value="Large" checked>
+                                    <label for="large">Large</label>
+                                </div>
+                            </div>
+                          
+                            <div class="select-flavor">
+                                <h5>Select Flavor</h5>
+                                <div class="select">
+                                    <select>
+                                        <option value="Original" id="original">Original</option>
+                                        <option value="Cheese" id="cheese">Cheese</option>
+                                        <option value="Barbeque" id="barbeque">Barbeque</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button id="add-wishlist" onclick=setWishlist() value="OFF"><i class="fa-solid fa-heart"></i>Add to Wishlist</button>
+                            <button id="add-to-cart" onclick=setAddCart()><i class="fa-solid fa-cart-shopping"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="similar-products">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>Similar Products</h2>
+                <div class="row">
+                    <div class="col">
+                        <img src="./assets/images/smilar-products/tornado-fires.jpg" alt="Tornado Fries">
+                        <div class="product-details">
+                            <div class="product-name">
+                                <span>Tornado Fries</span>
+                            </div>
+                            <div class="price">
+                                <span>₱150.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/smilar-products/sweet-potato.jpg" alt="Sweet Potato">
+                        <div class="product-details">
+                            <div class="product-name">
+                                <span>Sweet Potato Fries</span>
+                            </div>
+                            <div class="price">
+                                <span>₱179.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/smilar-products/crinkle-fries.jpg" alt="Crinke Fries">
+                        <div class="product-details">
+                            <div class="product-name">
+                                <span>Crinkle Fries</span>
+                            </div>
+                            <div class="price">
+                                <span>₱130.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="./assets/images/smilar-products/chili-fries.jpg" alt="Chili Fries">
+                        <div class="product-details">
+                            <div class="product-name">
+                                <span>Chili Fries</span>
+                            </div>
+                            <div class="price">
+                                <span id="price">₱169.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Snacks</h3>
+                    <ul>
+                        <li><a href="">Fries</a></li>
+                        <li><a href="">Burgers</a></li>
+                        <li><a href="">Crackers & Crisps</a></li>
+                        <li><a href="">Cookies & Baked Goods</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Salad</h3>
+                    <ul>
+                        <li><a href="">Green Salad</a></li>
+                        <li><a href="">Fruit Salad</a></li>
+                        <li><a href="">Bound Salad</a></li>
+                        <li><a href="">Dinner Salad</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Noodles</h3>
+                    <ul>
+                        <li><a href="">Egg Noodles</a></li>
+                        <li><a href="">Ramen Noodles</a></li>
+                        <li><a href="">Udon Noodles</a></li>
+                        <li><a href="">Soba Noodles</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>SUBSCRIBE</h3>
+                    <ul>
+                        <li><a href="">Stay updated on our latest food release</a></li>
+                        <li>
+                            <div class="email">
+                                <input type="email" placeholder="Enter Email Address"> 
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+                        </li>                
+                        <li><a href="">Copyright ©2021. All Rights Reserved.</a></li>
+                    </ul>
+                   </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/shoppingCart.js"></script>
+    <script src="./assets/js/wishList.js"></script>
+    
+</body>
+</html>
